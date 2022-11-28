@@ -9,6 +9,7 @@ public class WorkbookController {
     
     @GetMapping("/")
     public String getName(Model model) {
+        model.addAttribute("name","Yogesh");
         return "name-list";
     }
 }
