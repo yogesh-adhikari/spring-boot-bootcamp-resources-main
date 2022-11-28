@@ -1,8 +1,12 @@
 <!DOCTYPE html>
-<html >
+<html xmlns:th="http://www.thymeleaf.org">
     <head>
         <title>Traffic Sign</title>
     </head>
     <body>
+        <h1 th:text="'speed: ' + ${speed}"></h1>
+<!--        <h1 th:if="(${speed} >= 60)"><img th:width="200px" src="/images/slow-down.png" alt="slow down"></h1>-->
+<!--        <h1 th:unless="(${speed} >= 60)"><img th:width="200px" src="/images/speed-limit.png" alt="slow down"></h1>-->
+        <img th:src="(${speed} >= 60) ? '/images/slow-down.png'  :'/images/speed-limit.png'" th:width="200">
     </body>
 </html>
